@@ -4,7 +4,7 @@ from utils import summarize, generate_image
 st.title("Text to Summary to Image")
 st.header("This is a sample web app that summarizes text and generates and image of the summary")
 
-text = st.text_area("Enter your text below", "Astronaut riding a bicycle in the beach")
+text = st.text_area("Enter your URL below", "https://www.theverge.com/23702900/hyundai-ioniq-6-review-ev-specs-photos-price")
 
 if st.button("Summarize and Generate Image"):
     if not text:

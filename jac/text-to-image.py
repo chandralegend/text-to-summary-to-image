@@ -3,9 +3,10 @@ import base64
 from jaseci.jsorc.live_actions import jaseci_action
 import traceback
 from fastapi import HTTPException
+import os
 
 API_URL = "https://api-inference.huggingface.co/models/runwayml/stable-diffusion-v1-5"
-headers = {"Authorization": "Bearer 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"}
+headers = {"Authorization": f"Bearer {os.environ['HUGGINGFACE_API_TOKEN']}"}
 
 @jaseci_action(act_group=["text_to_image"], allow_remote=True)
 def generate(text:str) -> str:
